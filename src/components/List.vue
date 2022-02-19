@@ -10,7 +10,7 @@
 				<div class="d-flex justify-content-between align-items-center">
 					<h5 class="mb-1">{{ element.title }}</h5>
 					<img
-						:src="`https://img.youtube.com/vi/${element.watchId}/hqdefault.jpg`"
+						:src="`https://img.youtube.com/vi/${element.watchId}/maxresdefault.jpg`"
 						:alt="element.title"
 						class="list-image"
 					/>
@@ -34,11 +34,11 @@ export default {
 				},
 				{
 					title: 'Başlik 2',
-					watchId: 'uHiSY-PmXQE',
+					watchId: 'p_1zFJbrdWc',
 				},
 				{
 					title: 'Başlik 3',
-					watchId: 'uHiSY-PmXQE',
+					watchId: 'OkCX8d8WSOg',
 				},
 			],
 		};

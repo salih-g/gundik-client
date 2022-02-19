@@ -8,6 +8,8 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
+
 import Watch from './components/Watch.vue';
 import Inputs from './components/Inputs.vue';
 import List from './components/List.vue';
@@ -18,6 +20,12 @@ export default {
 		Watch,
 		Inputs,
 		List,
+	},
+	async created() {
+		await this.getContents();
+	},
+	methods: {
+		...mapActions(['getContents']),
 	},
 };
 </script>
