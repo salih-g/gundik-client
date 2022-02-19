@@ -21,10 +21,10 @@ export default {
 		...mapActions(['changeWatchId']),
 
 		playing() {
-			this.$socket.emit('play', {});
+			this.$socket.emit('play');
 		},
 		paused() {
-			this.$socket.emit('pause', {});
+			this.$socket.emit('pause');
 		},
 	},
 	computed: {
@@ -36,12 +36,13 @@ export default {
 	},
 
 	sockets: {
-		start_playing() {
-			this.player.playVideo();
+		async start_playing() {
+			console.log('çalüm');
+			await this.player.playVideo();
 		},
 
-		stop_playing() {
-			this.player.pauseVideo();
+		async stop_playing() {
+			await this.player.pauseVideo();
 		},
 
 		watchId(watchId) {

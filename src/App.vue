@@ -22,12 +22,19 @@ export default {
 		List,
 	},
 
-	sockets: {},
 	async created() {
 		await this.getContents();
+		this.$socket.emit('get_watchId');
 	},
+
 	methods: {
-		...mapActions(['getContents']),
+		...mapActions(['getContents', 'changeWatchId']),
+	},
+
+	sockets: {
+		watchId(watchId) {
+			this.changeWatchId(watchId);
+		},
 	},
 };
 </script>
