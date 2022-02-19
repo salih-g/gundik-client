@@ -45,6 +45,8 @@ export default {
 
 		async createHandler() {
 			this.createContent(this.content);
+			this.content.title = '';
+			this.content.videoUrl = '';
 		},
 	},
 };
