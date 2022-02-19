@@ -1,16 +1,17 @@
 <template>
-	<div id="app">
-		<h1>Sea</h1>
+	<div id="app" class="container">
+		<h1>Gundik Watch</h1>
+		<Watch class="watch" />
 	</div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
+import Watch from './components/Watch.vue';
 
 export default {
 	name: 'App',
 	components: {
-		HelloWorld,
+		Watch,
 	},
 };
 </script>
@@ -22,6 +23,9 @@ export default {
 	-moz-osx-font-smoothing: grayscale;
 	text-align: center;
 	color: #2c3e50;
-	margin-top: 60px;
+	margin-top: 20px;
+}
+.watch {
+	height: 400px;
 }
 </style>
