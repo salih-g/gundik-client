@@ -2,16 +2,22 @@
 	<div id="app" class="container">
 		<h1 class="text-center">Gundik Watch</h1>
 		<Watch class="watch" />
+		<Inputs class="mt-5" />
+		<List class="mt-5" />
 	</div>
 </template>
 
 <script>
 import Watch from './components/Watch.vue';
+import Inputs from './components/Inputs.vue';
+import List from './components/List.vue';
 
 export default {
 	name: 'App',
 	components: {
 		Watch,
+		Inputs,
+		List,
 	},
 };
 </script>
