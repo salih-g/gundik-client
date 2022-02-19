@@ -9,11 +9,26 @@ export default new Vuex.Store({
 		list: [],
 	},
 	actions: {
-		getContents({ state }) {
-			return axios()
+		async createContent({ state }, data) {
+			return await axios()
+				.post('/list', { title: data.title, videoUrl: data.videoUrl })
+				.then((response) => {
+					state.list = response.data;
+				});
+		},
+
+		async getContents({ state }) {
+			return await axios()
 				.get('/list')
 				.then((response) => {
-					console.log(response.data);
+					state.list = response.data;
+				});
+		},
+
+		async deleteContent({ state }, _id) {
+			return await axios()
+				.delete(`/list/${_id}`)
+				.then((response) => {
 					state.list = response.data;
 				});
 		},

@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<youtube
-			video-id="uHiSY-PmXQE"
+			video-id="HsFzwmNLPUs"
 			ref="youtube"
 			class="player"
 			width="100%"

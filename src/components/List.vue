@@ -1,8 +1,7 @@
 <template>
 	<div>
 		<div class="list-group mb-5">
-			<a
-				href="#"
+			<div
 				class="list-group-item list-group-item-action"
 				v-for="(element, key) in list"
 				:key="key"
@@ -15,33 +14,36 @@
 						class="list-image"
 					/>
 				</div>
-				<small class="text-muted">3 days ago</small>
-			</a>
+				<div class="d-flex justify-content-between mt-2">
+					<small class="text-muted">3 days ago</small>
+					<button
+						type="button"
+						class="btn btn-danger"
+						@click="deleteHandler(element._id)"
+					>
+						Delete
+					</button>
+				</div>
+			</div>
 		</div>
 	</div>
 </template>
 
 <script>
+import { mapState, mapActions } from 'vuex';
+
 export default {
 	name: 'List',
 	props: {},
-	data() {
-		return {
-			list: [
-				{
-					title: 'Başlik 1',
-					watchId: 'uHiSY-PmXQE',
-				},
-				{
-					title: 'Başlik 2',
-					watchId: 'p_1zFJbrdWc',
-				},
-				{
-					title: 'Başlik 3',
-					watchId: 'OkCX8d8WSOg',
-				},
-			],
-		};
+	computed: {
+		...mapState(['list']),
+	},
+	methods: {
+		...mapActions(['deleteContent']),
+
+		async deleteHandler(id) {
+			this.deleteContent(id);
+		},
 	},
 };
 </script>
