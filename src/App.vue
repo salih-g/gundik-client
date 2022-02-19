@@ -21,6 +21,8 @@ export default {
 		Inputs,
 		List,
 	},
+
+	sockets: {},
 	async created() {
 		await this.getContents();
 	},

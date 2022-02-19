@@ -7,6 +7,7 @@ Vue.use(Vuex);
 export default new Vuex.Store({
 	state: {
 		list: [],
+		watchId: '',
 	},
 	actions: {
 		async createContent({ state }, data) {
@@ -31,6 +32,10 @@ export default new Vuex.Store({
 				.then((response) => {
 					state.list = response.data;
 				});
+		},
+
+		changeWatchId({ state }, watchId) {
+			state.watchId = watchId;
 		},
 	},
 });

@@ -5,6 +5,7 @@
 				class="list-group-item list-group-item-action"
 				v-for="(element, key) in list"
 				:key="key"
+				@click="handleVideoChange(element.watchId)"
 			>
 				<div class="d-flex justify-content-between align-items-center">
 					<h5 class="mb-1">{{ element.title }}</h5>
@@ -34,15 +35,19 @@ import { mapState, mapActions } from 'vuex';
 
 export default {
 	name: 'List',
-	props: {},
 	computed: {
 		...mapState(['list']),
 	},
 	methods: {
-		...mapActions(['deleteContent']),
+		...mapActions(['deleteContent', 'changeWatchId']),
 
 		async deleteHandler(id) {
 			this.deleteContent(id);
+		},
+
+		handleVideoChange(watchId) {
+			this.$socket.emit('video_change', watchId);
+			this.changeWatchId(watchId);
 		},
 	},
 };
