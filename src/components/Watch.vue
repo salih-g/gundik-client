@@ -64,6 +64,10 @@ export default {
 			await this.player.pauseVideo();
 		},
 
+		async goTo(second) {
+			this.player.seekTo(second);
+		},
+
 		watchId(watchId) {
 			this.changeWatchId(watchId);
 		},
