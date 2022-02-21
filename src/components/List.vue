@@ -5,15 +5,16 @@
 				class="list-group-item list-group-item-action"
 				v-for="(element, key) in list"
 				:key="key"
-				@click="handleVideoChange(element.watchId)"
 			>
-				<div class="d-flex justify-content-between align-items-center">
-					<h5 class="mb-1">{{ element.title }}</h5>
-					<img
-						:src="`https://img.youtube.com/vi/${element.watchId}/maxresdefault.jpg`"
-						:alt="element.title"
-						class="list-image"
-					/>
+				<div @click="handleVideoChange(element.watchId)">
+					<div class="d-flex justify-content-between align-items-center">
+						<h5 class="mb-1">{{ element.title }}</h5>
+						<img
+							:src="`https://img.youtube.com/vi/${element.watchId}/maxresdefault.jpg`"
+							:alt="element.title"
+							class="list-image"
+						/>
+					</div>
 				</div>
 				<div class="d-flex justify-content-between mt-2">
 					<small class="text-muted">3 days ago</small>
