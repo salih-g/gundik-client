@@ -1,5 +1,5 @@
 <template>
-	<div class="inputs">
+	<form class="inputs" @submit.prevent="createHandler">
 		<div class="mb-3">
 			<label for="titleInput" class="form-label">Title:</label>
 			<input
@@ -20,10 +20,8 @@
 				v-model="content.videoUrl"
 			/>
 		</div>
-		<button type="button" class="btn btn-dark" @click="createHandler">
-			Add Video
-		</button>
-	</div>
+		<button type="submit" class="btn btn-dark">Add Video</button>
+	</form>
 </template>
 
 <script>
