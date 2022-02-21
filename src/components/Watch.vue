@@ -42,7 +42,8 @@ export default {
 			this.$socket.emit('pause');
 		},
 		async goSecond() {
-			this.player.seekTo(this.moveTo / 60);
+			this.player.seekTo(this.moveTo * 60);
+			this.$socket.emit('moveTo', this.moveTo * 60);
 			// console.log(await this.player.getCurrentTime());
 		},
 	},
