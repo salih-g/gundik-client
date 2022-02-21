@@ -8,6 +8,16 @@
 			@playing="playing"
 			@paused="paused"
 		></youtube>
+		Second:
+		<input
+			type="number"
+			class="form-control d-inline"
+			placeholder="10"
+			v-model="moveTo"
+		/>
+		<button type="button" class="btn btn-primary d-inline" @click="goSecond()">
+			Move To
+		</button>
 	</div>
 </template>
 
@@ -16,6 +26,11 @@ import { mapState, mapActions } from 'vuex';
 
 export default {
 	name: 'Watch',
+	data() {
+		return {
+			moveTo: 0,
+		};
+	},
 
 	methods: {
 		...mapActions(['changeWatchId']),
@@ -25,6 +40,10 @@ export default {
 		},
 		paused() {
 			this.$socket.emit('pause');
+		},
+		async goSecond() {
+			this.player.seekTo(this.moveTo);
+			// console.log(await this.player.getCurrentTime());
 		},
 	},
 	computed: {
@@ -37,7 +56,6 @@ export default {
 
 	sockets: {
 		async start_playing() {
-			console.log('çalüm');
 			await this.player.playVideo();
 		},
 
@@ -51,3 +69,10 @@ export default {
 	},
 };
 </script>
+
+<style scoped>
+.form-control {
+	width: 100px;
+	margin-right: 14px;
+}
+</style>
