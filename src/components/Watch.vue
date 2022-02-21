@@ -8,7 +8,7 @@
 			@playing="playing"
 			@paused="paused"
 		></youtube>
-		Second:
+		Minutes:
 		<input
 			type="number"
 			class="form-control d-inline"
@@ -42,7 +42,7 @@ export default {
 			this.$socket.emit('pause');
 		},
 		async goSecond() {
-			this.player.seekTo(this.moveTo);
+			this.player.seekTo(this.moveTo / 60);
 			// console.log(await this.player.getCurrentTime());
 		},
 	},
