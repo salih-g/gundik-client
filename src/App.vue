@@ -1,10 +1,8 @@
 <template>
 	<div id="app" class="con">
-		<div class="main">
-			<h1 class="text-center">Gundik Watch</h1>
-			<Watch class="watch" />
-		</div>
-		<Inputs />
+		<h1 class="text-center">Gundik Watch</h1>
+		<Watch class="watch" />
+		<Inputs class="inputs mt-5" />
 		<List class="mt-5" />
 	</div>
 </template>
@@ -49,8 +47,8 @@ export default {
 	color: #2c3e50;
 	margin-top: 20px;
 }
-.main {
-	height: 100vh;
+.inputs {
+	margin-top: 300px;
 }
 .con {
 	width: 97%;
