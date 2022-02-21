@@ -8,7 +8,7 @@
 			@playing="playing"
 			@paused="paused"
 		></youtube>
-		Second:
+		<!-- Second:
 		<input
 			type="number"
 			class="form-control d-inline"
@@ -17,7 +17,7 @@
 		/>
 		<button type="button" class="btn btn-primary d-inline" @click="goSecond()">
 			Move To
-		</button>
+		</button> -->
 	</div>
 </template>
 
