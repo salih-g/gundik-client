@@ -2,7 +2,7 @@
 	<div>
 		<div class="list-group mb-5">
 			<div
-				class="list-group-item list-group-item-action p-3"
+				class="list-group-item list-group-item-action mb-4"
 				v-for="(element, key) in list"
 				:key="key"
 			>
