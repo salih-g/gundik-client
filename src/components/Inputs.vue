@@ -20,7 +20,7 @@
 				v-model="content.videoUrl"
 			/>
 		</div>
-		<button type="submit" class="btn btn-dark main-button">Add Video</button>
+		<button type="submit" class="btn main-button">Add Video</button>
 	</form>
 </template>
 

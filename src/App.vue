@@ -45,6 +45,7 @@ export default {
 	--main-background-color: #212121;
 	--second-background-color: #323232;
 	--main-button-color: #ff9999;
+	--main-button-hover-color: #da8686;
 }
 body {
 	background-color: var(--main-background-color);
@@ -70,6 +71,10 @@ body {
 .main-button {
 	background-color: var(--main-button-color);
 	border-color: var(--main-button-color);
+}
+
+.main-button:hover {
+	background-color: var(--main-button-hover-color);
 }
 @media only screen and (min-width: 500px) {
 	.watch {

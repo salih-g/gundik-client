@@ -15,11 +15,7 @@
 			placeholder="10"
 			v-model="moveTo"
 		/>
-		<button
-			type="button"
-			class="btn btn-primary d-inline main-button"
-			@click="goSecond()"
-		>
+		<button type="button" class="btn d-inline main-button" @click="goSecond()">
 			Move To
 		</button>
 	</div>
