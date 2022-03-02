@@ -42,9 +42,9 @@ export default {
 <style>
 :root {
 	--main-text-color: #eeeeee;
-	--main-background-color: #393e46;
-	--second-background-color: #222831;
-	--main-button-color: #00adb5;
+	--main-background-color: #212121;
+	--second-background-color: #323232;
+	--main-button-color: #14ffec;
 }
 body {
 	background-color: var(--main-background-color);
