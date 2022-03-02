@@ -40,11 +40,20 @@ export default {
 </script>
 
 <style>
+:root {
+	--main-text-color: #eeeeee;
+	--main-background-color: #393e46;
+	--second-background-color: #222831;
+	--main-button-color: #00adb5;
+}
+body {
+	background-color: var(--main-background-color);
+}
 #app {
 	font-family: Avenir, Helvetica, Arial, sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	color: #2c3e50;
+	color: var(--main-text-color);
 	margin-top: 20px;
 }
 .inputs {
@@ -58,6 +67,10 @@ export default {
 	height: 200px;
 }
 
+.main-button {
+	background-color: var(--main-button-color);
+	border-color: var(--main-button-color);
+}
 @media only screen and (min-width: 500px) {
 	.watch {
 		height: 450px;

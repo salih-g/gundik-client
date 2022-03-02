@@ -2,7 +2,7 @@
 	<div>
 		<div class="list-group mb-5">
 			<div
-				class="list-group-item list-group-item-action"
+				class="list-group-item list-group-item-action p-3"
 				v-for="(element, key) in list"
 				:key="key"
 			>
@@ -57,5 +57,9 @@ export default {
 <style scoped>
 .list-image {
 	width: 150px;
+}
+.list-group-item {
+	background-color: var(--second-background-color);
+	color: var(--main-text-color);
 }
 </style>
