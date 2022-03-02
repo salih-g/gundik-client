@@ -44,7 +44,7 @@ export default {
 	--main-text-color: #eeeeee;
 	--main-background-color: #212121;
 	--second-background-color: #323232;
-	--main-button-color: #14ffec;
+	--main-button-color: #ff9999;
 }
 body {
 	background-color: var(--main-background-color);
