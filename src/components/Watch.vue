@@ -8,7 +8,7 @@
 			@playing="playing"
 			@paused="paused"
 		></youtube>
-		Minutes:
+		<span class="margin-left"> Minutes: </span>
 		<input
 			type="number"
 			class="form-control d-inline"
@@ -75,6 +75,9 @@ export default {
 </script>
 
 <style scoped>
+.margin-left {
+	margin-left: 14px;
+}
 .form-control {
 	width: 100px;
 	margin-right: 14px;

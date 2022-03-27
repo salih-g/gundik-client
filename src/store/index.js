@@ -11,6 +11,10 @@ export default new Vuex.Store({
 	},
 	actions: {
 		async createContent({ state }, data) {
+			if (!data.title) {
+				data.title = randomWord();
+			}
+
 			return await axios()
 				.post('/list', { title: data.title, videoUrl: data.videoUrl })
 				.then((response) => {
@@ -39,3 +43,8 @@ export default new Vuex.Store({
 		},
 	},
 });
+
+const randomWord = () => {
+	const words = ['Gundik', 'Anka', 'Gundik Gunsayan', 'Gukuk kuslari oter'];
+	return words[Math.floor(Math.random() * words.length)];
+};

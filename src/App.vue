@@ -1,9 +1,10 @@
 <template>
-	<div id="app" class="con">
-		<h1 class="text-center">Gundik Watch</h1>
+	<div id="app">
 		<Watch class="watch" />
-		<Inputs class="inputs mt-5" />
-		<List class="mt-5" />
+		<div class="con">
+			<Inputs class="inputs mt-5" />
+			<List class="mt-5" />
+		</div>
 	</div>
 </template>
 
@@ -55,7 +56,6 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	color: var(--main-text-color);
-	margin-top: 20px;
 }
 .inputs {
 	margin-top: 300px;

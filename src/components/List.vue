@@ -1,30 +1,26 @@
 <template>
-	<div>
+	<div class="list">
 		<div class="list-group mb-5">
-			<div
-				class="list-group-item list-group-item-action mb-4"
-				v-for="(element, key) in list"
-				:key="key"
-			>
-				<div @click="handleVideoChange(element.watchId)">
-					<div class="d-flex justify-content-between align-items-center">
-						<h5 class="mb-1">{{ element.title }}</h5>
-						<img
-							:src="`https://img.youtube.com/vi/${element.watchId}/maxresdefault.jpg`"
-							:alt="element.title"
-							class="list-image"
-						/>
+			<div class="card mb-5" v-for="(element, key) in list" :key="key">
+				<img
+					class="card-img-top click"
+					:src="`https://img.youtube.com/vi/${element.watchId}/maxresdefault.jpg`"
+					@click="handleVideoChange(element.watchId)"
+				/>
+				<div class="card-body">
+					<p class="card-text">
+						{{ element.title }}
+					</p>
+					<div class="d-flex justify-content-between mt-2">
+						<small class="text-muted">3 days ago</small>
+						<button
+							type="button"
+							class="btn btn-danger"
+							@click="deleteHandler(element._id)"
+						>
+							Delete
+						</button>
 					</div>
-				</div>
-				<div class="d-flex justify-content-between mt-2">
-					<small class="text-muted">3 days ago</small>
-					<button
-						type="button"
-						class="btn btn-danger"
-						@click="deleteHandler(element._id)"
-					>
-						Delete
-					</button>
 				</div>
 			</div>
 		</div>
@@ -55,11 +51,15 @@ export default {
 </script>
 
 <style scoped>
-.list-image {
-	width: 150px;
+.list {
+	width: 70%;
+	margin: 0 auto;
 }
-.list-group-item {
+.card {
 	background-color: var(--second-background-color);
 	color: var(--main-text-color);
+}
+.click {
+	cursor: pointer;
 }
 </style>
