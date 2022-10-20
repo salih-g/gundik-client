@@ -8,7 +8,7 @@ export default new Vuex.Store({
 	state: {
 		list: [],
 		watchId: '',
-		isLoggedIn: false,
+		user: JSON.parse(localStorage.getItem('user')),
 	},
 	actions: {
 		async createContent({ state }, data) {
@@ -17,9 +17,22 @@ export default new Vuex.Store({
 			}
 
 			return await axios()
-				.post('/list', { title: data.title, videoUrl: data.videoUrl })
+				.post('/list', {
+					title: data.title,
+					videoUrl: data.videoUrl,
+					token: state.user.token,
+				})
 				.then((response) => {
 					state.list = response.data;
+				});
+		},
+
+		async login({ state }, data) {
+			return await axios()
+				.post('/user/login', data)
+				.then((response) => {
+					localStorage.setItem('user', JSON.stringify(response.data));
+					state.user = response.data;
 				});
 		},
 

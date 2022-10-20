@@ -1,12 +1,12 @@
 <template>
 	<div id="app">
 		<Watch class="watch" />
-		<div class="con" v-if="isLoggedIn">
+		<div class="con" v-if="user">
 			<Inputs class="inputs mt-5" />
 			<List class="mt-5" />
 		</div>
 
-		<Login class="inputs mt-5" v-if="!isLoggedIn" />
+		<Login class="inputs mt-5" v-if="!user" />
 	</div>
 </template>
 
@@ -28,7 +28,7 @@
 		},
 
 		computed: {
-			...mapState(['isLoggedIn']),
+			...mapState(['user']),
 		},
 
 		async created() {

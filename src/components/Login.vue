@@ -5,7 +5,7 @@
 				id="titleInput"
 				type="text"
 				class="form-control"
-				placeholder="My beautiful video"
+				placeholder="username"
 				v-model="user.username"
 			/>
 		</div>
