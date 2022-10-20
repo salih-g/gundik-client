@@ -8,6 +8,7 @@ export default new Vuex.Store({
 	state: {
 		list: [],
 		watchId: '',
+		isLoggedIn: false,
 	},
 	actions: {
 		async createContent({ state }, data) {
